@@ -1,0 +1,84 @@
+
+//@theme "/usr/share/rofi/themes/material.rasi"
+
+configuration {
+	modes: [ run, drun ];
+	font: "MonaspiceNe Nerd Font Mono 16";
+	filebrowser {
+		directories-first: true;
+		show-hidden: true;
+	}
+	run {
+		display-name: "";
+	}	
+}
+
+* {
+	 background-color: rgba(51,51,51,80%);
+}
+
+window{
+	padding: 2px;
+	border-radius: 6px;
+	background-image: linear-gradient(45deg, rgba(51,204,255,0.93), rgba(0,255,153,0.93));
+}
+
+mainbox {
+	padding: 10px;
+	border-radius: 6px;
+	children: [inputbar, listview];
+}
+
+inputbar {
+	border-radius: 6px;
+	margin: 0 0 6px 0;
+	children: [prompt, entry];
+}
+
+prompt {
+	text-color: white;
+	padding: 0 5px;
+	vertical-align: 0.5;
+	font: "MonaspiceNe Nerd Font Mono 24";
+}
+
+entry {
+	placeholder: "Search...";
+	padding: 10px;
+	text-color: white;
+}
+
+listview {
+	lines: 10;	
+	background-color: transparent;
+}
+
+scrollbar {
+	border-radius: 6px;
+	background-image: linear-gradient(to right, rgba(51,204,255,0.93), rgba(0,255,153,0.93));
+	margin: 0 0 0 6px;
+	handle-with: 6px;
+}
+
+element {
+	border-radius: 6px;
+	padding: 10px;
+	orientation: horizontal;
+	children: [element-icon, element-text ];
+}
+
+element-text {
+	background-color:transparent;
+	text-color:white;
+}
+
+element-icon {
+	background-color:transparent;
+}
+
+element selected {
+	border: 2px solid;
+	border-color:  rgba(51,204,255,0.93);
+	border-radius: 6px;
+
+}

@@ -1,0 +1,142 @@
+// -*- mode: jsonc -*-
+{
+	// "layer": "top", // Waybar at top layer
+	// "position": "bottom", // Waybar position (top|bottom|left|right)
+	//"height": 24, // Waybar height (to be removed for auto height)
+	"margin": "10 5 0 5",
+	// "width": 1280, // Waybar width
+	//"spacing": 4, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"custom/arch",
+		"custom/weather"
+	],
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"group/brightness",
+		"group/audio",
+		"network",
+		"clock",
+		"tray",
+		"custom/notification",
+		"custom/power"
+	],
+	"custom/arch": {
+		"format": "󰣇"
+	},
+	// Modules configuration
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"format": "{icon}",
+		"format-icons": {
+			"persistent": "",
+			"active": ""
+		},
+		"persistent-workspaces": {
+			"*": [
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	},
+	"backlight/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal"
+	},
+	"tray": {
+		// "icon-size": 21,
+		"spacing": 10
+	},
+	"clock": {
+		"timezone": "America/Chicago",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%a %b %d <b>%I:%M %p</b>}"
+	},
+	"network": {
+		"format-wifi": "",
+		"format-disconnected": "Disconnected ⚠",
+		"tooltip-format": "{essid}"
+	},
+	"custom/weather": {
+		"format": "{}",
+		"interval": 600,
+		"return-type": "json",
+		"exec": "~/.config/waybar/scripts/wttr json"
+	},
+	"group/brightness": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "brightness-children",
+			"transition-left-to-right": true
+		},
+		"modules": [
+			"backlight",
+			"backlight/slider"
+		]
+	},
+	"group/audio": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "audio-children",
+			"transition-left-to-right": true
+		},
+		"modules": [
+			"pulseaudio",
+			"pulseaudio/slider"
+		]
+	},
+	"pulseaudio": {
+		"format": "{icon}",
+		"format-muted": " {format_source}",
+		"format-icons": {
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "pavucontrol"
+	},
+	"custom/notification": {
+		"tooltip": true,
+		"format": "<span size='16pt'>{icon}</span>",
+		"format-icons": {
+			"notification": "󱅫",
+			"none": "󰂜",
+			"dnd-notification": "󰂠",
+			"dnd-none": "󰪓",
+			"inhibited-notification": "󰂛",
+			"inhibited-none": "󰪑",
+			"dnd-inhibited-notification": "󰂛",
+			"dnd-inhibited-none": "󰪑"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"custom/power": {
+		"format": "⏻",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+	}
+}

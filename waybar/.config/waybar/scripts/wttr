@@ -1,0 +1,16 @@
+#!/bin/bash
+
+format=$1 # if no args we pipe to less
+
+loc="78704" 
+url="https://wttr.in/$loc?u&format=1"
+
+if [ "$format" = "json" ]; then
+  curl "$url" --max-time 60 | jq --unbuffered --compact-output -M -R '{text:.}'
+else
+  wttr=$(curl "https://wttr.in/$loc")
+  echo -e "$wttr" |less -X
+fi
+
+
+

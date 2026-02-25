@@ -1,0 +1,93 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+	  "newline": true,
+      "segments": [
+        {
+          "background": "#333333",
+          "foreground": "#1793d1",
+          "leading_diamond": "\ue0b6", 
+		  "trailing_diamond": "\ue0b4",
+ 		  "style": "diamond",
+          "template": " \udb82\udcc7 ",
+          "type": "text"
+        },
+		{
+          "background": "#333333",
+          "foreground": "#ffffff",
+          "leading_diamond": "\ue0b6", 
+		  "trailing_diamond": "\ue0b4",
+ 		  "style": "diamond",
+          "template": " {{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#333333",
+          "foreground": "#5AFE66",
+          "leading_diamond": "\ue0b6", 
+		  "trailing_diamond": "\ue0b4",
+          "options": {
+            "folder_icon": "\uf115",
+            "style": "full"
+          },
+          "style": "diamond",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#333333",
+          "foreground": "#5AFE66",
+		  "trailing_diamond": "\ue0b4",
+          "leading_diamond": "\ue0b6", 
+          "style": "diamond",
+          "template": " {{ .HEAD }} ",
+          "type": "git"
+        },
+        {
+          "background": "#333333",
+          "foreground": "#FF2525",
+		  "trailing_diamond": "\ue0b4",
+          "leading_diamond": "\ue0b6", 
+          "style": "diamond",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
+          "background": "#333333",
+          "foreground": "#FF2525",
+		  "trailing_diamond": "\ue0b4",
+          "leading_diamond": "\ue0b6", 
+          "style": "diamond",
+          "template": " \uf467 ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#007ACC",
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "transient_prompt": {
+		"foreground": "#007ACC",
+		"foreground_templates": [
+			"{{if gt .Code 0}}#FF2525{{end}}"
+		],
+        "style": "plain",
+        "template": "\u276f ",
+        "type": "text"
+  },
+  "version": 4
+}

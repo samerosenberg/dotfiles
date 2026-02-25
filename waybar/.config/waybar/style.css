@@ -1,0 +1,76 @@
+* {
+	border: none;
+	font-family: "MonaspiceNE Nerd Font Mono","Material Icons";
+}
+
+window#waybar{
+	background: transparent;
+}
+
+.module {
+	background: rgba(51,51,51,.8);
+	padding: 0 15px;
+	border-radius: 20px;
+	margin: 0 5px;
+}
+
+
+#custom-arch {
+	font-size: 24px;
+	color: rgba(23,147,209,1);
+}
+
+#custom-weather {
+	color: rgba(255, 158,38,1);
+}
+
+#workspaces button{
+	color: white
+}
+
+#workspaces button:hover {
+	background: rgba(223,223,223,.5);
+}
+
+
+#audio {
+	font-size: 24px;
+	color: rgba(101,141,255,.8);
+}
+
+#network {
+	font-size: 24px;
+	color: rgba(101,255,109,.8);
+}
+
+#clock {
+	color: white
+}
+
+#custom-notification {
+	color: white
+}
+
+#custom-power {
+	color: rgba(255, 101,101,.8);
+}
+
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: white;
+}

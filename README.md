@@ -2,20 +2,19 @@
 
 This repository contains all of my dotfiles used to setup my Hyprland Arch configuration, Neovim setup, and Ghostty + Zsh terminal
 
-Please feel free to grab any bits and bobs and apply to your configuration!
+Please feel free to grab any bits and bobs and apply to your own configuration!
 
 > [!NOTE]
 > This configuration is definitely subjet to change as I discover new customizations and update existing ones. so just because it's here today, doesn't mean it will be tomorrow. :) 
 
 # TOC
----------
+
 - [Hyprland](#hyprland)
 - [Neovim](#neovim)
 - [Waybar](#waybar)
 - [Swaync](#swaync)
 - [Rofi](#rofi)
 - [Ghostty + Zsh + OhMyPosh](#ghostty-+-zsh-+-ohmyposh)
----------
 
 ## Hyprland
 
@@ -73,7 +72,7 @@ Rofi is my app launcher of choice. Tried to match the native style of Hyprland b
 
 ## Ghostty + Zsh + OhMyPosh
 
-Ghostty is my terminal of choice with native tabbing and splits and the [config](ghostty/.config/ghostty/config) just contains setup for the Monospice Nerd Font as well as the customary 90% background opacity so I can always see my background. I'm running zshell as well and my [.zshrc](zsh/.zshrc) contains some setup for history tracking and ohmyposh setup.
+Ghostty is my terminal of choice with native tabbing and splits. The [config](ghostty/.config/ghostty/config) just contains setup for the Monospice Nerd Font as well as the customary 90% background opacity so I can always see my background. I'm running zshell as well and my [.zshrc](zsh/.zshrc) contains some setup for history tracking and ohmyposh setup.
 
 My ohmyposh [config](ohmyposh/.config/ohmyposh/config.json) is pretty minimal, with just OS logo, full path, and git branch. Don't sleep on the transient prompt though.
 

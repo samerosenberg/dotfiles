@@ -1,0 +1,3 @@
+# Description: Configure gaming mouse settings using Piper
+# Usage: mouse
+piper "$@"

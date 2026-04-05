@@ -1,0 +1,6 @@
+# Description: Updates system and cleans cache
+# Usage: update_all
+echo "Updating system..."
+sudo pacman -Syu
+echo "Cleaning package cache..."
+sudo pacman -Sc

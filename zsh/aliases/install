@@ -1,0 +1,3 @@
+# Description: Install a package using pacman
+# Usage: install <package>
+sudo pacman -S "$@"

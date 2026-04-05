@@ -1,16 +1,24 @@
 return {
-	'nvim-mini/mini.nvim',
+	"nvim-mini/mini.nvim",
 	config = function()
-		require('mini.ai').setup { n_lines = 500 }
-		require('mini.surround').setup()
-		require('mini.pairs').setup()
-		require('mini.comment').setup({
+		require("mini.ai").setup({ n_lines = 500 })
+		require("mini.surround").setup()
+		require("mini.pairs").setup()
+		require("mini.comment").setup({
 			mappings = {
-				comment_line = '<C-/>',
-				comment_visual = '<C-/>'
+				comment_line = "<C-/>",
+				comment_visual = "<C-/>",
+			},
+		})
+		require("mini.cursorword").setup()
+		require("mini.diff").setup({
+			view = {
+				signs = {
+					add = "+",
+					change = "~",
+					delete = "-",
+				},
 			}
 		})
-		require('mini.cursorword').setup()
-
-	end
+	end,
 }

@@ -1,0 +1,3 @@
+# Description: Install a package using yay (AUR helper)
+# Usage: yay_install <package>
+yay -S "$@"

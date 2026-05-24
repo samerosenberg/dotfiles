@@ -63,3 +63,8 @@ help() {
         print -z "$selected "
     fi
 }
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/srosenberg/.local/bin:$PATH"
